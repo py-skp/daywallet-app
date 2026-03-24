@@ -1,19 +1,391 @@
-DayWallet Support
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DayWallet Support</title>
+  <meta name="description" content="Get help with DayWallet. Find answers to common questions, contact support, and learn how the app works." />
+  <style>
+    :root {
+      --bg-top: #1C3858;
+      --bg-bottom: #0B63B3;
+      --card: rgba(255, 255, 255, 0.1);
+      --card-border: rgba(255, 255, 255, 0.18);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.82);
+      --soft: rgba(255, 255, 255, 0.68);
+      --accent: #1FA89A;
+      --accent-dark: #168d81;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+      --radius: 22px;
+    }
 
-Need help? We're here for you.
+    * {
+      box-sizing: border-box;
+    }
 
-Contact:
-daywallet@mudric.com
+    html {
+      scroll-behavior: smooth;
+    }
 
-Common Questions:
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      min-height: 100vh;
+      line-height: 1.55;
+    }
 
-• My data is missing  
-Your data is stored locally on your device. Make sure the app is not deleted.
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
 
-• Does the app connect to my bank?  
-No. DayWallet works completely offline.
+    .hero {
+      text-align: center;
+      padding: 28px 0 22px;
+    }
 
-• How do I upgrade to Premium?  
-Go to Settings → Upgrade Premium.
+    .logo {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 18px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
 
-We usually respond within 24 hours.
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand {
+      font-size: 42px;
+      line-height: 1.05;
+      margin: 0 0 10px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .tagline {
+      margin: 0 auto;
+      max-width: 680px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1.2fr 0.8fr;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .card.pad {
+      padding: 24px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .contact-box {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      transition: 0.2s ease;
+      font-weight: 600;
+    }
+
+    .pill:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-1px);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    details {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+      position: relative;
+      padding-right: 24px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: -2px;
+      font-size: 22px;
+      color: var(--soft);
+    }
+
+    details[open] summary::after {
+      content: "–";
+    }
+
+    details p {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .note {
+      color: var(--soft);
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    .footer {
+      margin-top: 24px;
+      text-align: center;
+      color: var(--soft);
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    ul.clean {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    ul.clean li + li {
+      margin-top: 8px;
+    }
+
+    @media (max-width: 760px) {
+      .brand {
+        font-size: 34px;
+      }
+
+      .tagline {
+        font-size: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card.pad {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="logo">
+        <!-- Replace src below with your actual app icon URL if you want -->
+        <!-- Example: <img src="icon.png" alt="DayWallet icon" /> -->
+        <img src="https://py-skp.github.io/daywallet-app/icon.png" alt="DayWallet icon" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=&quot;font-size:34px;font-weight:800;color:white;&quot;>DW</div>';">
+      </div>
+      <h1 class="brand">DayWallet Support</h1>
+      <p class="tagline">
+        Get help with DayWallet, find answers to common questions, and contact support if you need anything.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card pad">
+        <h2>How can we help?</h2>
+        <p>
+          DayWallet is designed to work simply: no account, no bank connection, and no cloud syncing.
+          If something is unclear, the answers below should help.
+        </p>
+
+        <div class="faq-list">
+          <details open>
+            <summary>Does DayWallet connect to my bank?</summary>
+            <p>
+              No. DayWallet works without bank connections. You enter your balance, bills, and income yourself,
+              and the app calculates your safe-to-spend number locally on your device.
+            </p>
+          </details>
+
+          <details>
+            <summary>Where is my data stored?</summary>
+            <p>
+              Your data is stored locally on your device. DayWallet does not require an account and does not sync your data to the cloud.
+            </p>
+          </details>
+
+          <details>
+            <summary>How do I upgrade to Premium?</summary>
+            <p>
+              Open DayWallet, go to <strong>Settings</strong>, and tap <strong>Upgrade</strong>. Premium unlocks unlimited bills,
+              unlimited income sources, full history, CSV export, and removes ads.
+            </p>
+          </details>
+
+          <details>
+            <summary>What happens if I delete the app?</summary>
+            <p>
+              Because your data is stored locally on your device, deleting the app may remove your stored data.
+              Export anything important before uninstalling.
+            </p>
+          </details>
+
+          <details>
+            <summary>How is Safe to Spend calculated?</summary>
+            <p>
+              DayWallet estimates what you can safely spend based on your current balance, bills due before payday,
+              your chosen safety buffer, and the number of days until your next income.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I track more than one income source?</summary>
+            <p>
+              Yes. You can track salary, freelance work, side income, rent, or other expected income. Free and Premium plans
+              may have different limits depending on your version.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <h2>Contact support</h2>
+        <div class="contact-box">
+          <p>
+            Need help, found a bug, or have a question? Reach out and we’ll do our best to help.
+          </p>
+
+          <a class="pill" href="mailto:support@daywallet.app">
+            ✉️ support@daywallet.app
+          </a>
+
+          <div class="quick-actions">
+            <a class="btn btn-primary" href="mailto:support@daywallet.app?subject=DayWallet%20Support%20Request">Email Support</a>
+            <a class="btn btn-secondary" href="https://py-skp.github.io/daywallet-app/privacy.html">Privacy Policy</a>
+          </div>
+
+          <p class="note">
+            Typical response time: within 24–48 hours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card pad" style="margin-top: 18px;">
+      <h2>Troubleshooting</h2>
+      <ul class="clean">
+        <li>If something looks wrong, close and reopen the app first.</li>
+        <li>Check that your balance, bills, income dates, and safety buffer are up to date.</li>
+        <li>If Premium is not showing correctly, reopen the Settings screen and try again.</li>
+        <li>Before deleting the app, export your data if you may need it later.</li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      © 2026 DayWallet. All rights reserved. &nbsp;•&nbsp;
+      <a href="https://py-skp.github.io/daywallet-app/privacy.html">Privacy Policy</a>
+    </div>
+  </main>
+</body>
+</html>
