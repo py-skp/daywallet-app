@@ -1,247 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DayWallet — Privacy Policy</title>
+  <meta
+    name="description"
+    content="DayWallet Privacy Policy. Learn what data is stored on your device, how ads and purchases work, and what choices you have."
+  />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-top: #1C3858;
+      --bg-bottom: #0B63B3;
+      --card: rgba(255, 255, 255, 0.96);
+      --card-border: rgba(255, 255, 255, 0.18);
+      --text: #1E293B;
+      --heading: #1E3A5F;
+      --muted: #64748B;
+      --soft: #94A3B8;
+      --accent: #0D9488;
+      --accent-soft: #F0FDFA;
+      --border: #E2E8F0;
+      --table-head: #F1F5F9;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 
-        'Segoe UI', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 1.7;
-      color: #1E293B;
-      background: #F8FAFC;
-      padding: 0 16px 60px;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      min-height: 100vh;
+      padding: 0 16px 56px;
     }
-    .container {
-      max-width: 680px;
+
+    .wrap {
+      max-width: 920px;
       margin: 0 auto;
-      background: #FFFFFF;
-      padding: 40px 40px;
-      border-radius: 12px;
-      margin-top: 40px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      padding-top: 28px;
     }
+
+    .hero {
+      text-align: center;
+      color: #fff;
+      padding: 20px 0 22px;
+    }
+
     .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1E3A5F;
-      margin-bottom: 4px;
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 16px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+      display: grid;
+      place-items: center;
     }
-    .logo span { color: #0D9488; }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand {
+      font-size: 40px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 19px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 22px auto 0;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
     h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1E3A5F;
-      margin: 24px 0 8px;
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
     }
+
     .meta {
       font-size: 14px;
-      color: #64748B;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #E2E8F0;
+      color: var(--muted);
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
     }
+
     h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #1E3A5F;
-      margin: 36px 0 12px;
+      font-size: 21px;
+      line-height: 1.2;
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.01em;
+      margin: 32px 0 12px;
     }
-    p { margin-bottom: 14px; color: #334155; }
-    ul {
-      margin: 8px 0 14px 20px;
+
+    p {
+      margin-bottom: 14px;
       color: #334155;
     }
-    ul li { margin-bottom: 6px; }
+
+    ul {
+      margin: 8px 0 14px 22px;
+      color: #334155;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 10px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 16px 0;
       font-size: 14px;
+      background: #fff;
     }
+
     th {
-      background: #F1F5F9;
-      padding: 10px 12px;
+      background: var(--table-head);
+      padding: 12px 14px;
       text-align: left;
-      font-weight: 600;
-      color: #1E293B;
-      border: 1px solid #E2E8F0;
+      font-weight: 700;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
     }
+
     td {
-      padding: 10px 12px;
-      border: 1px solid #E2E8F0;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
       color: #334155;
       vertical-align: top;
     }
-    a { color: #0D9488; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .contact {
-      background: #F0FDFA;
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin-top: 16px;
+
+    tr:last-child td {
+      border-bottom: none;
     }
-    .contact p { margin-bottom: 6px; }
+
+    .contact {
+      background: var(--accent-soft);
+      border: 1px solid #CCFBF1;
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin-top: 14px;
+    }
+
+    .contact p {
+      margin-bottom: 6px;
+    }
+
+    .callout {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0 4px;
+    }
+
+    .callout strong {
+      color: var(--heading);
+    }
+
     .footer {
       font-size: 13px;
-      color: #94A3B8;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #E2E8F0;
+      color: var(--soft);
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .brand {
+        font-size: 34px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .container {
+        padding: 28px 18px;
+        border-radius: 18px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 19px;
+      }
+
+      body {
+        padding: 0 12px 44px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">Day<span>Wallet</span></div>
-    <h1>Privacy Policy</h1>
-    <div class="meta">
-      Effective date: March 18, 2026 &nbsp;·&nbsp; 
-      Version 1.0.0 &nbsp;·&nbsp; 
-      Developer: Mudric Ltd
-    </div>
+  <main class="wrap">
+    <section class="hero">
+      <div class="logo">
+        <img
+          src="https://py-skp.github.io/daywallet-app/icon.png"
+          alt="DayWallet icon"
+          onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=&quot;font-size:34px;font-weight:800;color:white;&quot;>DW</div>';"
+        />
+      </div>
+      <div class="brand">DayWallet</div>
+      <p class="subtitle">
+        Privacy-first money planning. No bank connection required.
+      </p>
+    </section>
 
-    <h2>Overview</h2>
-    <p>DayWallet is a personal money-planning app that helps you understand what you can safely spend each day. Your financial data is stored locally on your device by default and does not require an account to use.</p>
-    <p>This policy explains what information DayWallet stores, which third-party services may process data, and what choices you have.</p>
+    <section class="container">
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        Effective date: March 18, 2026 &nbsp;·&nbsp;
+        Version 1.0.0 &nbsp;·&nbsp;
+        Developer: Mudric Ltd
+      </div>
 
-    <h2>1. Data You Enter — Stored Locally On Your Device</h2>
-    <p>DayWallet stores the following information locally in an on-device database:</p>
-    <ul>
-      <li>Account balance and transaction history</li>
-      <li>Bills, due dates, and payment status</li>
-      <li>Income events and payment cycles</li>
-      <li>App settings and preferences</li>
-      <li>Notification preferences and schedules</li>
-    </ul>
-    <p>This data never leaves your device unless you explicitly export it yourself. DayWallet does not require an account, login, or internet connection for any core budgeting feature.</p>
+      <h2>Overview</h2>
+      <p>
+        DayWallet is a personal money-planning app that helps you understand what you can safely spend each day.
+        Your financial data is stored locally on your device by default and does not require an account to use.
+      </p>
+      <p>
+        This policy explains what information DayWallet stores, which third-party services may process data,
+        and what choices you have.
+      </p>
 
-    <h2>2. What DayWallet Does Not Collect</h2>
-    <p>DayWallet does not collect or access:</p>
-    <ul>
-      <li>Your contacts, photos, or camera</li>
-      <li>Your precise or approximate location</li>
-      <li>Your microphone or audio input</li>
-      <li>Your bank account credentials or banking data</li>
-      <li>Any financial data beyond what you manually enter</li>
-    </ul>
+      <h2>1. Data You Enter — Stored Locally on Your Device</h2>
+      <p>DayWallet stores the following information locally in an on-device database:</p>
+      <ul>
+        <li>Account balance and transaction history</li>
+        <li>Bills, due dates, and payment status</li>
+        <li>Income events and payment cycles</li>
+        <li>App settings and preferences</li>
+        <li>Notification preferences and schedules</li>
+      </ul>
+      <p>
+        This data never leaves your device unless you explicitly export it yourself.
+        DayWallet does not require an account, login, or internet connection for any core budgeting feature.
+      </p>
 
-    <h2>3. Notifications</h2>
-    <p>If you enable notifications in Settings, DayWallet stores your reminder preferences on-device and requests permission from iOS to deliver local notifications. Notifications are used only to deliver bill due date reminders, income arrival reminders, and daily check-in prompts. Notification content is generated on-device and is not transmitted to any server.</p>
+      <h2>2. What DayWallet Does Not Collect</h2>
+      <p>DayWallet does not collect or access:</p>
+      <ul>
+        <li>Your contacts, photos, or camera</li>
+        <li>Your precise or approximate location</li>
+        <li>Your microphone or audio input</li>
+        <li>Your bank account credentials or banking data</li>
+        <li>Any financial data beyond what you manually enter</li>
+      </ul>
 
-    <h2>4. Advertising (Free Users)</h2>
-    <p>Free users may see banner ads delivered by <strong>Google AdMob</strong> (Google LLC).</p>
-    <p><strong>App Tracking Transparency</strong><br>
-    On iOS, DayWallet requests your permission before allowing personalised advertising, as required by Apple's App Tracking Transparency framework. A system prompt will appear after you complete onboarding.</p>
-    <ul>
-      <li>If you <strong>allow</strong> tracking: personalised ads may be shown based on your interests</li>
-      <li>If you <strong>decline</strong> tracking: only non-personalised ads are shown</li>
-    </ul>
-    <p>You can change this at any time in <strong>iOS Settings → Privacy &amp; Security → Tracking → DayWallet</strong>.</p>
-    <p><strong>What Google AdMob may collect</strong></p>
-    <ul>
-      <li>Advertising identifier (IDFA) — only if tracking is authorised</li>
-      <li>Coarse location derived from IP address</li>
-      <li>App interaction data for ad measurement and fraud prevention</li>
-      <li>Device information including iOS version and screen size</li>
-    </ul>
-    <p>
-      <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> &nbsp;·&nbsp;
-      <a href="https://support.google.com/admob" target="_blank">Google AdMob disclosure</a>
-    </p>
-    <p>Premium users never see ads regardless of tracking status.</p>
+      <h2>3. Notifications</h2>
+      <p>
+        If you enable notifications in Settings, DayWallet stores your reminder preferences on-device and requests permission
+        from iOS to deliver local notifications.
+      </p>
+      <p>
+        Notifications are used only to deliver bill due date reminders, income arrival reminders, and daily check-in prompts.
+        Notification content is generated on-device and is not transmitted to any server.
+      </p>
 
-    <h2>5. In-App Purchases</h2>
-    <p>DayWallet offers a Premium subscription processed by <strong>Apple</strong> through the In-App Purchase framework. DayWallet does not receive or store your payment card details. Purchase verification is handled entirely by Apple's StoreKit. You can restore a previous purchase at any time using Restore Purchases in the app.</p>
-    <p><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></p>
+      <h2>4. Advertising (Free Users)</h2>
+      <p>
+        Free users may see banner ads delivered by <strong>Google AdMob</strong> (Google LLC).
+      </p>
 
-    <h2>6. Crash Reporting</h2>
-    <p>DayWallet v1.0 does not include active crash reporting. The app contains optional Sentry integration which is only activated if configured at build time. The v1.0 App Store release does not have crash reporting enabled — no crash data is transmitted.</p>
+      <div class="callout">
+        <p><strong>App Tracking Transparency</strong></p>
+        <p>
+          On iOS, DayWallet requests your permission before allowing personalised advertising, as required by Apple’s
+          App Tracking Transparency framework. A system prompt will appear after you complete onboarding.
+        </p>
+      </div>
 
-    <h2>7. Data Export</h2>
-    <p>DayWallet Premium users can export transaction history to a CSV file via Settings. This export is initiated manually by you and saved to your device. DayWallet does not transmit this data anywhere.</p>
+      <ul>
+        <li>If you <strong>allow</strong> tracking, personalised ads may be shown based on your interests</li>
+        <li>If you <strong>decline</strong> tracking, only non-personalised ads are shown</li>
+      </ul>
 
-    <h2>8. Cloud Sync</h2>
-    <p>DayWallet v1.0 does not offer cloud sync or account-based backup. All budgeting data remains on your device. If cloud sync is introduced in a future version, this policy will be updated before that feature is launched.</p>
+      <p>
+        You can change this at any time in
+        <strong>iOS Settings → Privacy &amp; Security → Tracking → DayWallet</strong>.
+      </p>
 
-    <h2>9. Data Retention and Deletion</h2>
-    <p>Because all budgeting data is stored locally on your device, data remains until you edit, delete, or export it. You can permanently delete all app data using <strong>Settings → Clear all data</strong>. Uninstalling the app removes all locally stored data from your device.</p>
+      <p><strong>What Google AdMob may collect</strong></p>
+      <ul>
+        <li>Advertising identifier (IDFA) — only if tracking is authorised</li>
+        <li>Coarse location derived from IP address</li>
+        <li>App interaction data for ad measurement and fraud prevention</li>
+        <li>Device information including iOS version and screen size</li>
+      </ul>
 
-    <h2>10. Children</h2>
-    <p>DayWallet is not directed at children under 13 and is not intended to knowingly collect personal information from children. If you believe a child has provided personal information through this app, contact us at the address below.</p>
+      <p>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="https://support.google.com/admob" target="_blank" rel="noopener noreferrer">Google AdMob disclosure</a>
+      </p>
 
-    <h2>11. Your Choices</h2>
-    <table>
-      <tr>
-        <th>Choice</th>
-        <th>How to change it</th>
-      </tr>
-      <tr>
-        <td>Notification permissions</td>
-        <td>iOS Settings → Notifications → DayWallet</td>
-      </tr>
-      <tr>
-        <td>Ad tracking permission</td>
-        <td>iOS Settings → Privacy &amp; Security → Tracking → DayWallet</td>
-      </tr>
-      <tr>
-        <td>Delete all local data</td>
-        <td>DayWallet Settings → Clear all data</td>
-      </tr>
-      <tr>
-        <td>Export your data</td>
-        <td>DayWallet Settings → Export to CSV (Premium)</td>
-      </tr>
-      <tr>
-        <td>Cancel subscription</td>
-        <td>iOS Settings → Apple ID → Subscriptions</td>
-      </tr>
-    </table>
+      <p>Premium users never see ads regardless of tracking status.</p>
 
-    <h2>12. Third-Party Services</h2>
-    <table>
-      <tr>
-        <th>Service</th>
-        <th>Purpose</th>
-        <th>Active in v1.0</th>
-      </tr>
-      <tr>
-        <td>Google AdMob</td>
-        <td>Banner ads for free users</td>
-        <td>✅ Yes</td>
-      </tr>
-      <tr>
-        <td>Apple StoreKit</td>
-        <td>In-app purchase processing</td>
-        <td>✅ Yes</td>
-      </tr>
-      <tr>
-        <td>Sentry</td>
-        <td>Crash reporting</td>
-        <td>❌ Not active</td>
-      </tr>
-      <tr>
-        <td>Cloud sync</td>
-        <td>Account backup</td>
-        <td>❌ Not built</td>
-      </tr>
-    </table>
+      <h2>5. In-App Purchases</h2>
+      <p>
+        DayWallet offers a Premium subscription processed by <strong>Apple</strong> through the In-App Purchase framework.
+        DayWallet does not receive or store your payment card details. Purchase verification is handled entirely by Apple’s StoreKit.
+        You can restore a previous purchase at any time using Restore Purchases in the app.
+      </p>
+      <p>
+        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a>
+      </p>
 
-    <h2>13. Changes to This Policy</h2>
-    <p>When DayWallet adds new features that affect data practices, this policy will be updated before those features are released. The effective date at the top of this document will reflect the most recent revision.</p>
+      <h2>6. Crash Reporting</h2>
+      <p>
+        DayWallet v1.0 does not include active crash reporting. The app contains optional Sentry integration which is only
+        activated if configured at build time. The v1.0 App Store release does not have crash reporting enabled, so no crash data is transmitted.
+      </p>
 
-    <h2>14. Contact</h2>
-    <div class="contact">
-      <p><strong>Email:</strong> <a href="mailto:daywallet@mudric.com">daywallet@mudric.com</a></p>
-      <p><strong>Developer:</strong> Mudric Ltd</p>
-    </div>
+      <h2>7. Data Export</h2>
+      <p>
+        DayWallet Premium users can export transaction history to a CSV file via Settings. This export is initiated manually by you
+        and saved to your device. DayWallet does not transmit this data anywhere.
+      </p>
 
-    <div class="footer">
-      This policy applies to DayWallet for iOS version 1.0.0 and later.
-    </div>
-  </div>
+      <h2>8. Cloud Sync</h2>
+      <p>
+        DayWallet v1.0 does not offer cloud sync or account-based backup. All budgeting data remains on your device.
+        If cloud sync is introduced in a future version, this policy will be updated before that feature is launched.
+      </p>
+
+      <h2>9. Data Retention and Deletion</h2>
+      <p>
+        Because all budgeting data is stored locally on your device, data remains until you edit, delete, or export it.
+        You can permanently delete all app data using <strong>Settings → Clear all data</strong>.
+        Uninstalling the app removes all locally stored data from your device.
+      </p>
+
+      <h2>10. Children</h2>
+      <p>
+        DayWallet is not directed at children under 13 and is not intended to knowingly collect personal information from children.
+        If you believe a child has provided personal information through this app, contact us at the address below.
+      </p>
+
+      <h2>11. Your Choices</h2>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Choice</th>
+            <th>How to change it</th>
+          </tr>
+          <tr>
+            <td>Notification permissions</td>
+            <td>iOS Settings → Notifications → DayWallet</td>
+          </tr>
+          <tr>
+            <td>Ad tracking permission</td>
+            <td>iOS Settings → Privacy &amp; Security → Tracking → DayWallet</td>
+          </tr>
+          <tr>
+            <td>Delete all local data</td>
+            <td>DayWallet Settings → Clear all data</td>
+          </tr>
+          <tr>
+            <td>Export your data</td>
+            <td>DayWallet Settings → Export to CSV (Premium)</td>
+          </tr>
+          <tr>
+            <td>Cancel subscription</td>
+            <td>iOS Settings → Apple ID → Subscriptions</td>
+          </tr>
+        </table>
+      </div>
+
+      <h2>12. Third-Party Services</h2>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Active in v1.0</th>
+          </tr>
+          <tr>
+            <td>Google AdMob</td>
+            <td>Banner ads for free users</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Apple StoreKit</td>
+            <td>In-app purchase processing</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Sentry</td>
+            <td>Crash reporting</td>
+            <td>❌ Not active</td>
+          </tr>
+          <tr>
+            <td>Cloud sync</td>
+            <td>Account backup</td>
+            <td>❌ Not built</td>
+          </tr>
+        </table>
+      </div>
+
+      <h2>13. Changes to This Policy</h2>
+      <p>
+        When DayWallet adds new features that affect data practices, this policy will be updated before those features are released.
+        The effective date at the top of this document will reflect the most recent revision.
+      </p>
+
+      <h2>14. Contact</h2>
+      <div class="contact">
+        <p><strong>Email:</strong> <a href="mailto:daywallet@mudric.com">daywallet@mudric.com</a></p>
+        <p><strong>Developer:</strong> Mudric Ltd</p>
+      </div>
+
+      <div class="footer">
+        This policy applies to DayWallet for iOS version 1.0.0 and later.
+      </div>
+    </section>
+  </main>
 </body>
 </html>
